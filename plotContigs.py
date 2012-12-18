@@ -58,14 +58,14 @@ from pylab import plot,subplot,axis,stem,show,figure
 ###############################################################################
 ###############################################################################
 
-def parseFile(filename):
+def parseFile(filename, sep="\t"):
     """parse a csv file and returna an array"""
     return_array = []
     # parse a file    
     try:
         with open(filename, "r") as fh:
             for line in fh:
-                value = float(line.rstrip().split("\t")[-1])
+                value = float(line.rstrip().split(sep)[-1])
                 return_array.append(value)
         
     except: 
